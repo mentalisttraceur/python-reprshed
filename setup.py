@@ -9,7 +9,7 @@ try:
 except ImportError:
     from distutils.core import setup
 
-from normal import __doc__, __version__
+from no_positional_only_arguments import __doc__, __version__
 
 project_directory = os.path.abspath(os.path.dirname(__file__))
 readme_path = os.path.join(project_directory, 'README.rst')
