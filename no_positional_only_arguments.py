@@ -18,7 +18,7 @@ except (ImportError, NotImplementedError):
 
 
 __all__ = ('pure', 'impure', 'raw')
-__version__ = '1.0.0'
+__version__ = '1.0.1'
 
 
 _in_progress = set()
@@ -42,7 +42,7 @@ def pure(*args, **kwargs):
         str: The representation of ``self`` and its arguments.
     """
     if not args:
-        raise TypeError("pure missing 1 positional argument: 'self'")
+        raise TypeError("pure() missing 1 positional argument: 'self'")
     self, args = args[0], args[1:]
     repr_id = (id(self), _thread_id())
     if repr_id in _in_progress:
@@ -73,7 +73,7 @@ def impure(*args, **kwargs):
         str: The representation of ``self`` and its state.
     """
     if not args:
-        raise TypeError("impure missing 1 positional argument: 'self'")
+        raise TypeError("impure() missing 1 positional argument: 'self'")
     self, args = args[0], args[1:]
     repr_id = (id(self), _thread_id())
     if repr_id in _in_progress:

@@ -18,7 +18,7 @@ except (ImportError, NotImplementedError):
 
 
 __all__ = ('pure', 'impure', 'raw')
-__version__ = '1.0.0'
+__version__ = '1.0.1'
 
 
 _in_progress = set()
