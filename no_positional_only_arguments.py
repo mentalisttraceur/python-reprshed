@@ -6,19 +6,19 @@
 
 try:
     from _thread import get_ident as _thread_id
-except (ImportError, NotImplementedError):
+except ImportError:
     try:
         from thread import get_ident as _thread_id
-    except (ImportError, NotImplementedError):
+    except ImportError:
         try:
             from dummy_thread import get_ident as _thread_id
-        except (ImportError, NotImplementedError):
+        except ImportError:
             def _thread_id():
                 return 0
 
 
 __all__ = ('pure', 'impure', 'raw')
-__version__ = '1.0.1'
+__version__ = '1.0.2'
 
 
 _in_progress = set()
