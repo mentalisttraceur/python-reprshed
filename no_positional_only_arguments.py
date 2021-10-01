@@ -4,7 +4,7 @@
 """A toolshed for writing great ``__repr__`` methods quickly and easily."""
 
 __all__ = ('pure', 'impure', 'raw')
-__version__ = '1.0.3'
+__version__ = '1.0.4'
 
 
 try:
@@ -40,9 +40,9 @@ def pure(*args, **kwargs):
     Returns:
         str: The representation of ``self`` and its arguments.
     """
-    if not args:
-        raise TypeError("pure() missing 1 positional argument: 'self'")
-    self, args = args[0], args[1:]
+    def pure(self, *args):
+        return self, args
+    self, args = pure(*args)
     repr_id = (id(self), _thread_id())
     if repr_id in _in_progress:
         return '<...>'
@@ -71,9 +71,9 @@ def impure(*args, **kwargs):
     Returns:
         str: The representation of ``self`` and its state.
     """
-    if not args:
-        raise TypeError("impure() missing 1 positional argument: 'self'")
-    self, args = args[0], args[1:]
+    def impure(self, *args):
+        return self, args
+    self, args = impure(*args)
     repr_id = (id(self), _thread_id())
     if repr_id in _in_progress:
         return '<...>'
