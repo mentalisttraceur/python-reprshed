@@ -4,17 +4,7 @@
 """A toolshed for writing great ``__repr__`` methods quickly and easily."""
 
 
-try:
-    from _thread import get_ident as _thread_id
-except ImportError:
-    try:
-        from thread import get_ident as _thread_id
-    except ImportError:
-        try:
-            from dummy_thread import get_ident as _thread_id
-        except ImportError:
-            def _thread_id():
-                return 0
+from _thread import get_ident as _thread_id
 
 
 __all__ = ('pure', 'impure', 'raw')
