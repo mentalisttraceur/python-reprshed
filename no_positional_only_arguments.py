@@ -3,6 +3,9 @@
 
 """A toolshed for writing great ``__repr__`` methods quickly and easily."""
 
+__all__ = ('pure', 'impure', 'raw')
+__version__ = '1.0.2'
+
 
 try:
     from _thread import get_ident as _thread_id
@@ -15,10 +18,6 @@ except ImportError:
         except ImportError:
             def _thread_id():
                 return 0
-
-
-__all__ = ('pure', 'impure', 'raw')
-__version__ = '1.0.2'
 
 
 _in_progress = set()

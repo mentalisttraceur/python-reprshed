@@ -3,12 +3,11 @@
 
 """A toolshed for writing great ``__repr__`` methods quickly and easily."""
 
-
-from _thread import get_ident as _thread_id
-
-
 __all__ = ('pure', 'impure', 'raw')
 __version__ = '1.0.2'
+
+
+from _thread import get_ident as _thread_id
 
 
 _in_progress = set()
