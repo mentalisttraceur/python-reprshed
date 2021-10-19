@@ -4,7 +4,7 @@
 """A toolshed for writing great ``__repr__`` methods quickly and easily."""
 
 __all__ = ('pure', 'impure', 'raw')
-__version__ = '1.0.4'
+__version__ = '1.0.5'
 
 
 try:
