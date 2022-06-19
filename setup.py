@@ -50,6 +50,10 @@ else:
     except OSError as error:
         if error.errno != errno.ENOENT:
             raise
+    try:
+        link = os.link
+    except AttributeError:
+        link = os.symlink
     os.link(source_path, path_setup_py_uses)
 
 setup(
